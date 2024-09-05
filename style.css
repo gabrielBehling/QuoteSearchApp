@@ -1,58 +1,120 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    color: #DDE6ED;
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #dde6ed;
 }
 
-body{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #526D82;
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #526d82;
 }
 
-main{
-    min-height: 400px;
-    height: fit-content;
-    min-width: 400px;
-    width: 50vw;
-    border: 1px solid #333333;
-    padding: 2%;
-    border-radius: 25px;
-    background-color: #27374D;
+main {
+	min-height: 400px;
+	height: fit-content;
+	min-width: 400px;
+	max-width: 900px;
+	width: 40vw fit-content;
+	border: 1px solid #333333;
+	padding: 2%;
+	border-radius: 25px;
+	background-color: #27374d;
 }
 
-header{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1%;
+header {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 1%;
 }
 
-#search{
-    margin-top: 3%;
-    display: flex;
-    width: 100%;
+#results-area {
+	position: relative;
+	height: 100%;
 }
 
-#results{
-    padding: 1%;
-    height: max-content;
+#results {
+	padding: 1%;
+	height: max-content;
 }
 
-.result{
-    margin-top: 1%;
+.result {
+	margin-top: 1%;
 }
-#search-bar{
-    width: 85%;
-    background-color: #27374D;
+
+/* From Uiverse.io by xetrov47 */
+.search {
+	margin-top: 2%;
+	display: flex;
+	align-items: center;
+	text-align: center;
 }
-button{
-    width: 15%;
-    background-color: #27374D;
+
+.search__input {
+	font-family: inherit;
+	font-size: inherit;
+	border: 1px solid #333333;
+	color: #dde6ed;
+	padding: 5px 10px;
+	border-radius: 4px;
+	margin-right: -1.5rem;
+	height: 30px;
+	width: 15rem;
+	background-color: #526d82;
+}
+
+.search__input::-webkit-input-placeholder {
+	font-weight: 400;
+	color: #dde6ed;
+	font-size: 14px;
+}
+
+.search__button {
+	border: none;
+	background-color: #526d82;
+	margin-top: 0.1em;
+}
+
+.search__button:hover {
+	cursor: pointer;
+}
+
+.search input:focus {
+	outline: none;
+}
+
+#loading {
+	width: 30px;
+	height: 30px;
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: -15px 0 0 -15px;
+	z-index: 10000000;
+	border: 5px solid #dde6ed;
+	border-top: 6px solid #333333;
+	border-radius: 100%;
+	animation: spin 1s infinite linear;
+}
+
+#loading.display {
+	visibility: visible;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

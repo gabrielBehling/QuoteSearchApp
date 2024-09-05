@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Quotes</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-<main>
-    <header>
-        <h2>Quote Search App</h2>
-        <div id="search">
-            <input type="text" id="search-bar" placeholder="Type your quote:">
-            <button onclick="search()">Search</button>
-        </div>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Search Quotes</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<main>
+			<header>
+				<h1>Quote Search App</h1>
+				<div class="search">
+					<input
+						placeholder="Type your quote:"
+						class="search__input"
+						type="text"
+						onkeypress="handlKeyPress()"
+					/>
+					<button class="search__button" onclick="search()">
+						<svg
+							viewBox="0 0 16 16"
+							class="bi bi-search"
+							fill="currentColor"
+							height="16"
+							width="16"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+							></path>
+						</svg>
+					</button>
+				</div>
+			</header>
 
-    <section id="results"></section>
-
-</main>
-</body>
+			<section id="results-area">
+				<div id="results"></div>
+				<div id="loading"></div>
+			</section>
+		</main>
+	</body>
 </html>
